@@ -1,0 +1,37 @@
+--Create a grocery store database
+
+CREATE TABLE Spiceland_Store (PO_Code INTEGER PRIMARY KEY, Name TEXT, Profit REAL, Weekly_Sales INTEGER, Category TEXT); 
+
+INSERT into Spiceland_Store 
+VALUES 
+(101, 'Turmeric Powder', 19.29, 13, 'Powder'),
+(102, 'Cumin', 4.59, 10, 'Seed'),
+(103, 'Cardamom', 13.03, 5, 'Seed'),
+(104, 'Black Pepper', 6.29, 3, 'Seed'),
+(105, 'Coriander', 6.99, 1, 'Herb'),
+(106, 'Cilantro', 3.07, 1, 'Herb'),
+(107, 'Garam Masala Powder', 7.01, 2, 'Powder'),
+(108, 'Fenugreek', 4.36, 3, 'Seed'),
+(109, 'Mango Powder', 13.09, 4, 'Powder'),
+(110, 'Cinnamon Powder', 15.26, 6, 'Powder'),
+(111, 'Fennel', 5.03, 29, 'Seed'),
+(112, 'Star Anise', 3.87, 18, 'Seed'),
+(113, 'Ajwain', 5.43, 2, 'Seed'),
+(114, 'Cloves', 6.01, 10, 'Seed'),
+(115, 'Mustard Seeds', 5.96, 16, 'Seed');
+
+
+--Display the database ordered by weekly sales.
+SELECT * FROM Spiceland_Store
+ORDER BY Weekly_Sales desc;
+
+--Display what category has the most profits weekly.
+SELECT Category, round(Max(Profit) * Weekly_Sales,2) FROM Spiceland_Store
+GROUP BY Category  
+ORDER BY Profit * Weekly_Sales asc;
+
+--Display the 5 most profitable items and their weekly sales.
+SELECT Name, Profit, Weekly_Sales
+FROM Spiceland_store
+order by Profit desc
+limit 5; 
