@@ -1,4 +1,4 @@
-#In this SQL code, I'm querying database created that holds Pokemon data to answer questions about the data. 
+#In this SQL code, I'm querying a database created that holds Pokemon data. Questions are answered by code and are summarized by statements above them. 
 
 CREATE TABLE Pokemon (
   ID INTEGER PRIMARY KEY AUTOINCREMENT,
